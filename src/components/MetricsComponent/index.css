@@ -1,0 +1,38 @@
+.tasks-chart-con{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(17, 17, 17);
+}
+
+.chart-con{
+    text-align: center;
+}
+
+.chart-heading{
+    color: rgb(107, 47, 70);
+}
+
+
+.messages-con{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.message{
+    color:red;
+    font-weight: bold;
+    font-size: 25px;
+    text-transform: uppercase;
+
+}
+
+.suggest{
+    font-weight: 400;
+    font-size: 20px;
+    color: blue;
+    
+}
