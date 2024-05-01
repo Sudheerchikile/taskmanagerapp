@@ -8,6 +8,14 @@
 }
 
 
+.error{
+  color: red;
+  font-size: 15px;
+  display: block;
+
+}
+
+
 .task-form-container{
  
   display: flex;

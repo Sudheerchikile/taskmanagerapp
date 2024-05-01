@@ -41,13 +41,23 @@ class TaskForm extends Component {
   };
 
   validateForm = () => {
-    const { taskName } = this.state;
+    const { taskName,description } = this.state;
     let errors = {};
+
+    
 
     if (!taskName.trim()) {
       errors.taskName = 'Task Name is required';
     }
 
+    if (!description.trim()) {
+      errors.description = 'Description is required';
+    }
+  
+
+   
+
+    
     // Add validation for other fields as needed
 
     return errors;
@@ -64,7 +74,7 @@ class TaskForm extends Component {
         description,
         dueDate,
         assigneeType,
-        status: 'Not Started', // Set initial status for new task
+        status: 'Not Started', 
       };
 
       try {
@@ -75,6 +85,7 @@ class TaskForm extends Component {
         });
 
         if (response.ok) {
+          
           this.fetchTasks();
           this.setState({
             taskName: '',
@@ -141,7 +152,8 @@ return (
             <label htmlFor="taskName" className="label">Task Name</label>
             <input type="text" id="taskName" placeholder='Enter a Title'
              value={taskName} onChange={this.handleChange('taskName')} className="form-control" />
-            {errors.taskName && <span className="error">{errors.taskName}</span>}
+              {errors.taskName && <span className="error">{errors.taskName}</span>}
+           
           </div>
 
           <div className="form-group">
@@ -155,7 +167,7 @@ return (
             <label htmlFor="dueDate" className="label">Due Date</label>
             <input type="date" id="dueDate" placeholder='select a date'
              value={dueDate} onChange={this.handleChange('dueDate')} className="form-control" />
-            {errors.dueDate && <span className="error">{errors.dueDate}</span>}
+            {errors.dueDate && <p className="error">{errors.dueDate}</p>}
           </div>
 
           <div className="form-group">
@@ -168,6 +180,7 @@ return (
             {errors.assigneeType && <span className="error">{errors.assigneeType}</span>}
           </div>
           <button type="submit" className="button">Add Task</button>
+         
         </form>
 
         
